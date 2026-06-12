@@ -58,9 +58,14 @@ def crear_archivo_csv(nombre_archivo):
 def pedir_texto(mensaje, campo):
     while True:
         valor = input(mensaje).strip()
-        if valor:
-            return valor
-        print(f"  [ERROR] El campo '{campo}' no puede estar vacío.")
+        if not valor:
+            print(f"[ERROR] El campo '{campo}' no puede estar vacío.")
+            continue
+        if not valor.replace(" ", "").isalpha():
+            print("[ERROR] Ingrese solo letras y espacios.")
+            continue
+
+        return valor
 
 
 def pedir_entero(mensaje, campo):

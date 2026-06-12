@@ -172,7 +172,7 @@ def buscar_paises(paises):
             resultados.append(pais)
     else:
         for pais in paises:
-            if termino in pais["nombre"].lower():
+            if pais["nombre"].lower().startswith(termino):
                 resultados.append(pais)
 
     if not resultados:

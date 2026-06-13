@@ -215,6 +215,7 @@ def filtrar_paises(paises):
 
 def filtrar_por_continente(paises):
     continentes = obtener_continentes_unicos(paises)
+    
     if not continentes:
         return []
 
@@ -222,8 +223,19 @@ def filtrar_por_continente(paises):
     for i, cont in enumerate(continentes, 1):
         print(f"    {i}) {cont}")
 
-    continente = pedir_texto("  Continente: ", "continente").lower()
-    return [p for p in paises if p["continente"].lower() == continente]
+    while True:
+        opcion = input("\n  Seleccione un continente: ").strip()
+
+        if opcion.isdigit():
+            opcion = int(opcion)
+
+            if 1 <= opcion <= len(continentes):
+                continente = continentes[opcion - 1]
+                break
+
+        print("  [ERROR] Opción inválida.")
+
+    return [p for p in paises if p["continente"] == continente]
 
 
 def filtrar_por_rango(paises, campo, nombre_campo):

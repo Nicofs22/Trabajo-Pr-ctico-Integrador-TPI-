@@ -106,30 +106,7 @@ opcion 1
   Colombia                    51.265.844       1.141.748  America     
   Mexico                     128.932.753       1.964.375  America     
   Peru                        33.359.418       1.285.216  America     
-  Uruguay                      3.574.900         176.215  America     
-  Venezuela                   28.301.696         912.050  America     
-  Japon                      125.800.000         377.975  Asia        
-  China                    1.412.600.000       9.596.960  Asia        
-  India                    1.393.409.038       3.287.263  Asia        
-  Corea del Sur               51.780.579         100.210  Asia        
-  Indonesia                  273.523.615       1.904.569  Asia        
-  Tailandia                   71.601.103         513.120  Asia        
-  Alemania                    83.149.300         357.022  Europa      
-  Francia                     67.391.582         643.801  Europa      
-  Italia                      60.367.477         301.340  Europa      
-  España                      47.351.567         505.990  Europa      
-  Reino Unido                 67.886.011         243.610  Europa      
-  Portugal                    10.295.909          92.212  Europa      
-  Suecia                      10.402.070         450.295  Europa      
-  Polonia                     38.386.000         312.679  Europa      
-  Nigeria                    211.400.708         923.768  Africa      
-  Etiopia                    120.283.026       1.104.300  Africa      
-  Egipto                     102.334.404       1.001.449  Africa      
-  Sudafrica                   60.041.994       1.219.090  Africa      
-  Kenia                       54.985.698         580.367  Africa      
-  Tanzania                    63.298.550         945.087  Africa      
-  Australia                   25.788.215       7.692.024  Oceania     
-  Nueva Zelanda                5.084.300         268.021  Oceania       
+  Uruguay                      3.574.900         176.215  America        
   ---------------------------------------------------------------------
 
   opcion 2 
@@ -256,27 +233,7 @@ opcion 1
   Corea del Sur               51.780.579         100.210  Asia        
   Egipto                     102.334.404       1.001.449  Africa      
   España                      47.351.567         505.990  Europa      
-  Etiopia                    120.283.026       1.104.300  Africa      
-  Francia                     67.391.582         643.801  Europa      
-  India                    1.393.409.038       3.287.263  Asia        
-  Indonesia                  273.523.615       1.904.569  Asia        
-  Italia                      60.367.477         301.340  Europa      
-  Japon                      125.800.000         377.975  Asia        
-  Kenia                       54.985.698         580.367  Africa      
-  Mexico                     128.932.753       1.964.375  America     
-  Nigeria                    211.400.708         923.768  Africa      
-  Nueva Zelanda                5.084.300         268.021  Oceania     
-  Peru                        33.359.418       1.285.216  America     
-  Polonia                     38.386.000         312.679  Europa      
-  Portugal                    10.295.909          92.212  Europa      
-  Reino Unido                 67.886.011         243.610  Europa      
-  Rumania                     19.237.691         238.397  Europa      
-  Sudafrica                   60.041.994       1.219.090  Africa      
-  Suecia                      10.402.070         450.295  Europa      
-  Tailandia                   71.601.103         513.120  Asia        
-  Tanzania                    63.298.550         945.087  Africa      
-  Uruguay                      3.574.900         176.215  America     
-  Venezuela                   28.301.696         912.050  America     
+
   ---------------------------------------------------------------------
 
   Presioná Enter para continuar...

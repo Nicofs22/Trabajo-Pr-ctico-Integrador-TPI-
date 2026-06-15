@@ -55,7 +55,7 @@ def crear_archivo_csv(nombre_archivo):
 
 # ====================== ENTRADA DE DATOS ======================
 
-def pedir_texto(mensaje, campo):
+def pedir_texto(mensaje, campo):    # Pide texto y valida la entrada
     while True:
         valor = input(mensaje).strip()
         if not valor:
@@ -68,7 +68,7 @@ def pedir_texto(mensaje, campo):
         return valor
 
 
-def pedir_entero(mensaje, campo):
+def pedir_entero(mensaje, campo):   # Pide número entero y valida la entrada
     while True:
         valor_texto = input(mensaje).strip()
         if not valor_texto:
@@ -86,7 +86,7 @@ def pedir_entero(mensaje, campo):
 
 # ====================== OPERACIONES PRINCIPALES ======================
 
-def agregar_pais(paises):
+def agregar_pais(paises):    # Permite agregar paises con todos sus datos
     print("\n  ── Agregar nuevo país ──")
     nombre = pedir_texto("  Nombre del país: ", "nombre")
     poblacion = pedir_entero("  Población: ", "poblacion")
@@ -111,7 +111,7 @@ def agregar_pais(paises):
         paises.remove(nuevo_pais)
 
 
-def actualizar_pais(paises):
+def actualizar_pais(paises):     # Muestra opciones y permite actualizar datos de un pais si este existe
     print("\n  ── Actualizar país ──")
     nombre_buscar = pedir_texto("  Nombre del país: ", "nombre")
     pais = buscar_por_nombre_exacto(paises, nombre_buscar)
@@ -150,7 +150,7 @@ def actualizar_pais(paises):
 
 # ====================== BÚSQUEDAS ======================
 
-def buscar_por_nombre_exacto(paises, nombre):
+def buscar_por_nombre_exacto(paises, nombre):    # Recorre y busca coincidencia exacta, devuelve datos si existe 
     nombre_lower = nombre.lower()
     for pais in paises:
         if pais["nombre"].lower() == nombre_lower:
@@ -158,7 +158,7 @@ def buscar_por_nombre_exacto(paises, nombre):
     return None
 
 
-def buscar_paises(paises):
+def buscar_paises(paises):     # Muestra menu de busqueda, llama a coincidencia exacta o devuelve datos busqueda parcial si existe
     print("\n  ── Buscar país ──")
     print("    1) Coincidencia exacta")
     print("    2) Coincidencia parcial")
@@ -189,7 +189,7 @@ def buscar_paises(paises):
 
 # ====================== FILTROS ======================
 
-def filtrar_paises(paises):
+def filtrar_paises(paises):    # Muestra menu de filtros, llama a opcion correspondiente
     print("\n  ── Filtrar países ──")
     print("    1) Por continente")
     print("    2) Por rango de población")
@@ -213,7 +213,7 @@ def filtrar_paises(paises):
         mostrar_tabla(resultados)
 
 
-def filtrar_por_continente(paises):
+def filtrar_por_continente(paises):   # Opcion de filtrado por continente con menu
     continentes = obtener_continentes_unicos(paises)
 
     if not continentes:
@@ -238,7 +238,7 @@ def filtrar_por_continente(paises):
     return [p for p in paises if p["continente"] == continente]
 
 
-def filtrar_por_rango(paises, campo, nombre_campo):
+def filtrar_por_rango(paises, campo, nombre_campo):    # Opcion de filtrado por rango
     print(f"\n  Filtrando por {nombre_campo}:")
     minimo = pedir_entero(f"  Mínimo: ", "mínimo")
     maximo = pedir_entero(f"  Máximo: ", "máximo")
@@ -250,13 +250,13 @@ def filtrar_por_rango(paises, campo, nombre_campo):
     return [p for p in paises if minimo <= p[campo] <= maximo]
 
 
-def obtener_continentes_unicos(paises):
+def obtener_continentes_unicos(paises):   # Devuelve continentes
     return sorted({p["continente"] for p in paises})
 
 
 # ====================== ORDENAMIENTO ======================
 
-def ordenar_paises(paises):
+def ordenar_paises(paises):    # Muestra menu de ordenado y ordena según opción elegida
     if not paises:
         print("\n  [INFO] No hay países para ordenar.")
         return
@@ -290,7 +290,7 @@ def ordenar_paises(paises):
 
 # ====================== ESTADÍSTICAS ======================
 
-def mostrar_estadisticas(paises):
+def mostrar_estadisticas(paises):   # Muestra menu de estadisticas y llama función según corresponda
     if not paises:
         print("\n  [INFO] No hay datos para estadísticas.")
         return
@@ -322,7 +322,7 @@ def mostrar_estadisticas(paises):
         else:
             print("  [ERROR] Opción inválida.")
 
-def estadisticas_poblacion(paises):
+def estadisticas_poblacion(paises):    # Muestra estadisticas de población del archivo
     max_p = max(paises, key=lambda p: p["poblacion"])
     min_p = min(paises, key=lambda p: p["poblacion"])
     prom_p = sum(p["poblacion"] for p in paises) / len(paises)
@@ -332,11 +332,11 @@ def estadisticas_poblacion(paises):
     print(f"     Menor: {min_p['nombre']} → {min_p['poblacion']:,}".replace(",", "."))
     print(f"     Promedio: {int(prom_p):,}".replace(",", "."))
 
-def estadisticas_superficie(paises):
+def estadisticas_superficie(paises):    # Muestra estadisticas de superfice del archivo
     prom_s = sum(p["superficie"] for p in paises) / len(paises)
     print(f" \n Superficie promedio: {int(prom_s):,} km²".replace(",", "."))
 
-def estadisticas_continentes(paises):
+def estadisticas_continentes(paises):    # Muestra estadisticas de continentes del archivo
     conteo = {}
     for p in paises:
         conteo[p["continente"]] = conteo.get(p["continente"], 0) + 1
@@ -350,7 +350,7 @@ def estadisticas_continentes(paises):
 
 # ====================== VISUALIZACIÓN ======================
 
-def listar_todos(paises):
+def listar_todos(paises):     # Devuelve la lista completa de paises si existe
     if not paises:
         print("\n  [INFO] No hay países registrados.")
         return
@@ -358,7 +358,7 @@ def listar_todos(paises):
     mostrar_tabla(paises)
 
 
-def mostrar_tabla(paises):
+def mostrar_tabla(paises):       # Muestra en formato de tabla la información guardada si esta existe
     if not paises:
         print("  (Sin resultados)")
         return
@@ -382,7 +382,7 @@ def mostrar_tabla(paises):
 
 # ====================== MENÚ ======================
 
-def mostrar_menu():
+def mostrar_menu():    # Muestra menu principal del programa
     print("\n" + "=" * 55)
     print("      SISTEMA DE GESTIÓN DE PAÍSES - UTN")
     print("=" * 55)
@@ -397,7 +397,7 @@ def mostrar_menu():
     print("=" * 55)
 
 
-def obtener_opcion():
+def obtener_opcion():    # Pide opción del menu principal y la devuelve al ser válida
     validas = {"0", "1", "2", "3", "4", "5", "6", "7"}
     while True:
         op = input("  Elegí una opción: ").strip()
